@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>  Task Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Task Manager</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,8 +11,10 @@
     <h1>Advanced Task Manager</h1>
 
     <div class="input-group">
+      <label for="taskInput" class="visually-hidden">Task</label>
       <input type="text" id="taskInput" placeholder="Enter a task" />
-      
+
+      <label for="prioritySelect" class="visually-hidden">Priority</label>
       <select id="prioritySelect" title="Priority">
         <option value="1">Priority 1 (Highest)</option>
         <option value="2">Priority 2</option>
@@ -21,8 +23,10 @@
         <option value="5">Priority 5 (Lowest)</option>
       </select>
 
+      <label for="dueDateInput" class="visually-hidden">Due Date</label>
       <input type="date" id="dueDateInput" title="Due Date" />
 
+      <label for="categorySelect" class="visually-hidden">Category</label>
       <select id="categorySelect" title="Category">
         <option value="General" selected>General</option>
         <option value="Work">Work</option>
@@ -35,30 +39,28 @@
     </div>
 
     <div class="controls">
-      <label>Sort By:
-        <select id="sortSelect">
-          <option value="order">Manual Order</option>
-          <option value="priority">Priority</option>
-          <option value="timestamp">Date Added</option>
-          <option value="dueDate">Due Date</option>
-        </select>
-      </label>
+      <label for="sortSelect">Sort By:</label>
+      <select id="sortSelect">
+        <option value="order">Manual Order</option>
+        <option value="priority">Priority</option>
+        <option value="timestamp">Date Added</option>
+        <option value="dueDate">Due Date</option>
+      </select>
 
-      <label>Filter:
-        <select id="filterSelect">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="incomplete">Incomplete</option>
-          <option value="category-General">Category: General</option>
-          <option value="category-Work">Category: Work</option>
-          <option value="category-Personal">Category: Personal</option>
-          <option value="category-Shopping">Category: Shopping</option>
-          <option value="category-Others">Category: Others</option>
-        </select>
-      </label>
+      <label for="filterSelect">Filter:</label>
+      <select id="filterSelect">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="incomplete">Incomplete</option>
+        <option value="category-General">Category: General</option>
+        <option value="category-Work">Category: Work</option>
+        <option value="category-Personal">Category: Personal</option>
+        <option value="category-Shopping">Category: Shopping</option>
+        <option value="category-Others">Category: Others</option>
+      </select>
     </div>
 
-    <ul id="taskList"></ul>
+    <ul id="taskList" aria-label="Task List"></ul>
   </div>
 
   <script src="script.js"></script>
