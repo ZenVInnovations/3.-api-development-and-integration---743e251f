@@ -12,7 +12,8 @@ body {
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.98);
+  color: #111;
   padding: 30px 40px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
@@ -23,7 +24,7 @@ body {
 
 h1 {
   margin-bottom: 20px;
-  color: #333;
+  color: #222;
 }
 
 .input-group {
@@ -39,10 +40,7 @@ input[type="text"], select, input[type="date"] {
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
-}
-
-input[type="text"] {
-  flex-grow: 1;
+  flex: 1;
   min-width: 200px;
 }
 
@@ -53,7 +51,6 @@ button#addBtn {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  flex-shrink: 0;
   transition: background-color 0.2s ease;
 }
 
@@ -79,7 +76,6 @@ button#addBtn:hover {
   font-size: 14px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin-left: 5px;
 }
 
 ul#taskList {
@@ -131,7 +127,6 @@ li.task-item.completed span.task-text {
 
 button.remove-btn,
 button.edit-btn {
-  background-color: #dc3545;
   border: none;
   color: white;
   padding: 6px 10px;
@@ -140,6 +135,10 @@ button.edit-btn {
   font-size: 14px;
   transition: background-color 0.2s ease;
   flex-shrink: 0;
+}
+
+button.remove-btn {
+  background-color: #dc3545;
 }
 
 button.remove-btn:hover {
@@ -173,4 +172,31 @@ input.edit-input, select.edit-select, input.edit-date {
 
 .dragging {
   opacity: 0.5;
+}
+
+input:focus,
+button:focus,
+select:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 600px) {
+  .input-group,
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input[type="text"],
+  select,
+  input[type="date"],
+  button#addBtn {
+    width: 100%;
+  }
+
+  .controls {
+    align-items: flex-start;
+  }
 }
